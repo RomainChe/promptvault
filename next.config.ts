@@ -27,4 +27,6 @@ export default withSentryConfig(nextConfig, {
   silent: !process.env.CI,
   // Events go through our own domain: keeps CSP connect-src 'self' and avoids ad blockers.
   tunnelRoute: "/monitoring",
+  // No build-time usage statistics sent to Sentry.
+  telemetry: false,
 });
