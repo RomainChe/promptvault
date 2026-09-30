@@ -30,6 +30,16 @@ test("every internal link on the landing resolves", async ({ page, request }) =>
   }
 });
 
+test("security headers are set, with a fresh CSP nonce per request", async ({ request }) => {
+  const [a, b] = await Promise.all([request.get("/"), request.get("/")]);
+  const csp = a.headers()["content-security-policy"];
+  expect(csp).toMatch(/script-src 'self' 'nonce-[^']+' 'strict-dynamic'/);
+  expect(csp).not.toBe(b.headers()["content-security-policy"]);
+  expect(a.headers()["x-content-type-options"]).toBe("nosniff");
+  expect(a.headers()["referrer-policy"]).toBe("strict-origin-when-cross-origin");
+  expect(a.headers()["strict-transport-security"]).toContain("max-age=");
+});
+
 test("first visit follows the system dark preference", async ({ browser }) => {
   const context = await browser.newContext({ colorScheme: "dark" });
   const page = await context.newPage();

@@ -31,7 +31,7 @@ logic + UI + tests) that leaves the app deployable. Detailed tasks: [todo.md](to
 - [x] 1. Figma mockup — 3 directions, A + dark B chosen (other screens designed in code: Figma Starter MCP quota)
 - [x] 2. Next.js scaffold, tooling and static landing page
 - [x] 3. GitHub repo, CI and first Vercel deploy — https://promptvault-topaz.vercel.app
-- [ ] 4. Sentry wired and security headers
+- [x] 4. Sentry wired and security headers (nonce CSP)
 
 **Checkpoint A** — preview URL live, CI green, one test error visible in Sentry.
 
