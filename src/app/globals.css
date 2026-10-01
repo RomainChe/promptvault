@@ -11,6 +11,7 @@
   --muted: #475569;
   --accent: #4f46e5;
   --on-accent: #ffffff;
+  --danger: #b91c1c;
 }
 
 :root[data-theme="dark"] {
@@ -23,6 +24,7 @@
   --muted: #9aa7b4;
   --accent: #a3e635;
   --on-accent: #0b0f14;
+  --danger: #fca5a5;
 }
 
 @theme inline {
@@ -34,6 +36,7 @@
   --color-muted: var(--muted);
   --color-accent: var(--accent);
   --color-on-accent: var(--on-accent);
+  --color-danger: var(--danger);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-jetbrains-mono);
 }

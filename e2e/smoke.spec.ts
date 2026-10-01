@@ -52,3 +52,11 @@ test("signed-out visit to /app redirects to sign-in with a next param", async ({
   await page.goto("/app/prompts?tag=sql");
   await expect(page).toHaveURL("/sign-in?next=%2Fapp%2Fprompts%3Ftag%3Dsql");
 });
+
+test("sign-in rejects an invalid email with a text error, keeping the next param", async ({ page }) => {
+  await page.goto("/app");
+  await page.getByLabel("Email").fill("jane");
+  await page.getByRole("button", { name: "Send magic link" }).click();
+  await expect(page.getByText("Enter a valid email address.")).toBeVisible();
+  await expect(page.locator('input[name="next"]')).toHaveValue("/app");
+});

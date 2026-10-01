@@ -38,7 +38,7 @@ logic + UI + tests) that leaves the app deployable. Detailed tasks: [todo.md](to
 ### Phase 1 — identity
 
 - [x] 5. Supabase clients, `profiles` table, protected `/app` (dev project `rflhtfnbbsamvevuntet`, eu-west-1)
-- [ ] 6. Magic link sign-in and sign-out
+- [x] 6. Magic link sign-in and sign-out
 - [ ] 7. GitHub OAuth sign-in
 - [ ] 8. Settings: username and account deletion
 - [ ] 9. Playwright authenticated setup

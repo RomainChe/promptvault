@@ -91,9 +91,9 @@ middleware refreshing the session and redirecting `/app/**` when signed out. Mig
 ### Task 6: Magic link sign-in and sign-out
 
 **Acceptance criteria:**
-- [ ] Form states: idle, invalid email (text error), sending, "Check your inbox", error.
-- [ ] Clicking the e-mailed link lands on `/app` with a `profiles` row created.
-- [ ] Sign-out returns to `/` and `/app` redirects again.
+- [x] Form states: idle, invalid email (text error), sending, "Check your inbox", error.
+- [x] Clicking the e-mailed link lands on `/app` with a `profiles` row created.
+- [x] Sign-out returns to `/` and `/app` redirects again.
 
 **Verification:** component test of the form; manual magic link on localhost.
 
