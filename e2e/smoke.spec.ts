@@ -47,3 +47,8 @@ test("first visit follows the system dark preference", async ({ browser }) => {
   await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
   await context.close();
 });
+
+test("signed-out visit to /app redirects to sign-in with a next param", async ({ page }) => {
+  await page.goto("/app/prompts?tag=sql");
+  await expect(page).toHaveURL("/sign-in?next=%2Fapp%2Fprompts%3Ftag%3Dsql");
+});

@@ -79,9 +79,9 @@ middleware refreshing the session and redirecting `/app/**` when signed out. Mig
 + RLS + trigger on `auth.users`. `safeNextPath()` helper.
 
 **Acceptance criteria:**
-- [ ] `/app` signed out → `/sign-in?next=/app`.
-- [ ] `safeNextPath` rejects `https://evil.com` and `//evil.com`.
-- [ ] Migration applied to `dev`; `get_advisors` clean.
+- [x] `/app` signed out → `/sign-in?next=/app`.
+- [x] `safeNextPath` rejects `https://evil.com` and `//evil.com`.
+- [x] Migration applied to `dev`; `get_advisors` clean.
 
 **Verification:** unit tests; `curl -I localhost:3000/app` shows the redirect.
 

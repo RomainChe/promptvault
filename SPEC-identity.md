@@ -29,7 +29,10 @@ profiles (
 
 - Row created by a trigger on `auth.users` insert; username derived from the GitHub login or the
   email local part, de-duplicated with a numeric suffix.
-- RLS: anyone can `select` (usernames appear on public prompts); only the owner can `update`.
+- RLS: anyone can `select` `id` and `username` only (column grant; usernames appear on public
+  prompts); only the owner can `update`, and only `username`.
+- Email sign-ups expose their email local part as the default public username (accepted
+  trade-off; changeable in settings).
 - Personal data stored: email (in `auth.users`, managed by Supabase), username. Nothing else.
 
 ## Acceptance Criteria
