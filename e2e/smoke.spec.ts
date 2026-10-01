@@ -58,5 +58,7 @@ test("sign-in rejects an invalid email with a text error, keeping the next param
   await page.getByLabel("Email").fill("jane");
   await page.getByRole("button", { name: "Send magic link" }).click();
   await expect(page.getByText("Enter a valid email address.")).toBeVisible();
-  await expect(page.locator('input[name="next"]')).toHaveValue("/app");
+  // Both the GitHub and the e-mail forms carry it.
+  await expect(page.locator('input[name="next"]')).toHaveCount(2);
+  for (const input of await page.locator('input[name="next"]').all()) await expect(input).toHaveValue("/app");
 });

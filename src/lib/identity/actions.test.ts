@@ -1,10 +1,16 @@
 import { beforeEach, expect, test, vi } from "vitest";
 
 const signInWithOtp = vi.fn();
-vi.mock("@/lib/supabase/server", () => ({ createClient: async () => ({ auth: { signInWithOtp } }) }));
+const signInWithOAuth = vi.fn();
+vi.mock("@/lib/supabase/server", () => ({ createClient: async () => ({ auth: { signInWithOtp, signInWithOAuth } }) }));
+vi.mock("next/navigation", () => ({
+  redirect: (url: string) => {
+    throw new Error(`REDIRECT ${url}`);
+  },
+}));
 vi.mock("next/headers", () => ({ headers: async () => new Headers({ origin: "https://pv.test" }) }));
 
-const { sendMagicLink } = await import("./actions");
+const { sendMagicLink, signInWithGitHub } = await import("./actions");
 
 const form = (fields: Record<string, string>) => {
   const data = new FormData();
@@ -34,4 +40,20 @@ test("reports a Supabase failure as an error", async () => {
     status: "error",
     email: "jane@example.com",
   });
+});
+
+test("GitHub sign-in sends the browser to the provider, returning to the callback", async () => {
+  signInWithOAuth.mockResolvedValue({ data: { url: "https://github.com/login/oauth/authorize?x=1" }, error: null });
+  await expect(signInWithGitHub(form({ next: "/app/prompts" }))).rejects.toThrow(
+    "REDIRECT https://github.com/login/oauth/authorize?x=1",
+  );
+  expect(signInWithOAuth).toHaveBeenCalledWith({
+    provider: "github",
+    options: { redirectTo: "https://pv.test/auth/callback?next=%2Fapp%2Fprompts" },
+  });
+});
+
+test("GitHub sign-in failure returns to the sign-in page with an error", async () => {
+  signInWithOAuth.mockResolvedValue({ data: { url: null }, error: new Error("provider disabled") });
+  await expect(signInWithGitHub(form({}))).rejects.toThrow("REDIRECT /sign-in?error=link");
 });

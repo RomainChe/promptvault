@@ -106,7 +106,7 @@ middleware refreshing the session and redirecting `/app/**` when signed out. Mig
 in Supabase; add "Continue with GitHub".
 
 **Acceptance criteria:**
-- [ ] GitHub sign-in lands on `/app`; username derived from the GitHub login.
+- [x] GitHub sign-in lands on `/app`; username derived from the GitHub login.
 
 **Verification:** manual sign-in on localhost and on the preview.
 
