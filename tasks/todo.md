@@ -3,7 +3,7 @@
 Definition of done for **every** task (from the workspace CLAUDE.md), not repeated below:
 `npm run lint`, `npm run typecheck`, `npm test`, `npm run build` pass; UI checked with
 `playwright-cli` at 375 px and 1280 px, keyboard included, console and network clean;
-`docs/promptvault/` updated when behaviour or setup changes.
+`docs/` updated when behaviour or setup changes.
 
 ⚠️ = needs your approval or a manual step from you.
 

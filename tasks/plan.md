@@ -2,7 +2,7 @@
 
 ## Overview
 
-Build PromptVault (see [SPEC.md](../SPEC.md)) from Figma mockup to production on Vercel, at
+Build PromptVault (see [SPEC.md](../docs/specs/SPEC.md)) from Figma mockup to production on Vercel, at
 zero cost. Work follows the approved capability map: foundation → identity → billing →
 prompts → collections ∥ search → launch. Every task is a vertical slice (migration + server
 logic + UI + tests) that leaves the app deployable. Detailed tasks: [todo.md](todo.md).
