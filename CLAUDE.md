@@ -34,8 +34,7 @@ src/lib/<module>/     logique par module (identity, security, supabase…)
 src/proxy.ts          proxy Next.js : pose la CSP
 supabase/migrations/  migrations SQL versionnées
 e2e/                  tests Playwright
-docs/                 doc technique et spécifications
-tasks/                plan et liste des tâches
+docs/                 doc technique, spécifications et PLAN.md
 ```
 
 Les tests unitaires sont à côté du code testé (`*.test.ts(x)`).
@@ -63,4 +62,4 @@ Les tests unitaires sont à côté du code testé (`*.test.ts(x)`).
 - `docs/architecture.md` : structure, choix techniques (thème, polices, CSP…).
 - `.claude/skills/` : `migration-supabase` (nouvelle migration), `verif-terminee` (contrôles avant de rendre une tâche).
 - `docs/specs/SPEC.md` : spécification générale, et `docs/specs/SPEC-<module>.md` par module.
-- `tasks/plan.md` et `tasks/todo.md` : plan d'implémentation et tâches. Exception à la règle commune : ce projet n'a pas de `docs/PLAN.md`, ces deux fichiers en tiennent lieu (skill `branche-tache` comprise). Mets-les à jour en fin de session.
+- `docs/PLAN.md` : plan, checklist et prochaines actions. Mets-le à jour en fin de session.

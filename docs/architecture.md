@@ -11,7 +11,7 @@ promptvault/
   supabase/migrations/  migrations SQL versionnées
   e2e/                  tests Playwright
   docs/                 doc technique ; docs/specs/ : spécification par module
-  tasks/                plan de tâches
+  docs/PLAN.md          plan et suivi des tâches
 ```
 
 Les tests unitaires sont à côté du code testé (`*.test.tsx`).
