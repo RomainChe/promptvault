@@ -1,7 +1,7 @@
 # PromptVault
 
 Bibliothèque de prompts IA freemium, projet portfolio construit de A à Z sans frais.
-Spécification complète : [`specs/SPEC.md`](specs/SPEC.md) ; plan : [`../tasks/`](../tasks/plan.md).
+Spécification complète : [`specs/SPEC.md`](specs/SPEC.md) ; plan : [`PLAN.md`](PLAN.md).
 
 ## Stack
 

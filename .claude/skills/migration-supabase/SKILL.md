@@ -1,6 +1,6 @@
 ---
 name: migration-supabase
-description: Crée une migration SQL Supabase pour PromptVault (table, colonne, policy RLS, trigger, fonction). Utiliser quand on demande d'« ajouter une table », « ajouter une colonne », « changer une policy », « écrire la migration » ou qu'une tâche de tasks/todo.md liste un fichier supabase/migrations/. Pas pour lire des données ni pour appliquer une migration existante.
+description: Crée une migration SQL Supabase pour PromptVault (table, colonne, policy RLS, trigger, fonction). Utiliser quand on demande d'« ajouter une table », « ajouter une colonne », « changer une policy », « écrire la migration » ou qu'une tâche de docs/PLAN.md liste un fichier supabase/migrations/. Pas pour lire des données ni pour appliquer une migration existante.
 ---
 
 # migration-supabase
@@ -9,8 +9,8 @@ Les règles métier (quota, Pro, propriété) vivent dans la base : chaque migra
 
 ## Étapes
 
-1. **Contexte** : lis la tâche dans `tasks/todo.md` et la spec du module dans `docs/specs/SPEC-<module>.md`. Lis le schéma actuel avec le MCP Supabase (`list_tables`), puis les migrations existantes de `supabase/migrations/`.
-2. **Numéro** : prends le numéro libre suivant d'après `ls supabase/migrations/`, et non celui prévu dans `tasks/todo.md` (il peut être déjà pris). Nom : `000N_<slug>.sql`, slug en anglais snake_case.
+1. **Contexte** : lis la tâche dans `docs/PLAN.md` et la spec du module dans `docs/specs/SPEC-<module>.md`. Lis le schéma actuel avec le MCP Supabase (`list_tables`), puis les migrations existantes de `supabase/migrations/`.
+2. **Numéro** : prends le numéro libre suivant d'après `ls supabase/migrations/`. Nom : `000N_<slug>.sql`, slug en anglais snake_case.
 3. **Écris la migration**, dans le style des existantes :
    - commentaire d'en-tête d'une ligne qui renvoie à la spec ;
    - `enable row level security` sur chaque nouvelle table ;

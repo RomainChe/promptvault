@@ -1,6 +1,6 @@
 ---
 name: verif-terminee
-description: Vérifie qu'une tâche PromptVault est terminée avant de la rendre (lint, typecheck, tests, build, contrôle navigateur). Utiliser avant d'annoncer « c'est fait », quand on demande « vérifie », « tout passe ? », « prêt pour la PR ? », ou à la fin d'une tâche de tasks/todo.md.
+description: Vérifie qu'une tâche PromptVault est terminée avant de la rendre (lint, typecheck, tests, build, contrôle navigateur). Utiliser avant d'annoncer « c'est fait », quand on demande « vérifie », « tout passe ? », « prêt pour la PR ? », ou à la fin d'une tâche de docs/PLAN.md.
 ---
 
 # verif-terminee
@@ -20,7 +20,7 @@ Rejoue la CI (`.github/workflows/ci.yml`) en local, puis contrôle l'interface s
    - Console sans erreur JS, réseau sans 4xx/5xx ni erreur CSP.
    - Navigation au clavier (Tab, Shift+Tab, Entrée, Échap) et snapshot d'accessibilité.
    - Pour un écran qui charge des données : les états chargement, vide, erreur et succès.
-4. **Doc et suivi** : si le comportement ou l'installation change, vérifie que `docs/` est à jour. Coche la tâche dans `tasks/todo.md`.
+4. **Doc et suivi** : si le comportement ou l'installation change, vérifie que `docs/` est à jour. Coche la tâche dans `docs/PLAN.md`.
 5. **Bilan** : rends un tableau « vérification → résultat ». Liste aussi ce qui n'a pas pu être vérifié et pourquoi (serveur arrêté, MCP absent…). N'omets rien en silence.
 
 ## Interdits

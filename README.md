@@ -4,7 +4,7 @@ Save, organize and share your AI prompts, with semantic search. A free, end-to-e
 project: Next.js, Supabase, Stripe (test mode), Sentry, Vercel.
 
 - Spec: [docs/specs/SPEC.md](docs/specs/SPEC.md)
-- Plan: [tasks/plan.md](tasks/plan.md)
+- Plan: [docs/PLAN.md](docs/PLAN.md)
 - Docs: [docs/](docs/README.md)
 
 ```bash
